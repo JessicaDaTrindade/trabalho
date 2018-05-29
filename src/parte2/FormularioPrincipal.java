@@ -101,6 +101,7 @@ public class FormularioPrincipal {
 	JMenuItem mntmNome = new JMenuItem("Nome");
 	mnNewMenu_1.add(mntmNome);
 	
+	
 	JMenuItem mntmAutor = new JMenuItem("Autor");
 	mnNewMenu_1.add(mntmAutor);
 	mntmSair.addMouseListener(new MouseListener() {
