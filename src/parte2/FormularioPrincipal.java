@@ -5,11 +5,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.net.URL;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
+import java.awt.Font;
+
+
 
 public class FormularioPrincipal {
 	
@@ -23,43 +24,38 @@ public class FormularioPrincipal {
 	frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 	frm.setLocationRelativeTo(null); 
 	frm.getContentPane().setLayout(null); 
-	frm.getContentPane().setBackground(Color.DARK_GRAY);
+	frm.getContentPane().setBackground(new Color(255, 250, 250));
 	
-	//JFrameSetIcon
+	//JFrameSetIcon mudar ícone título
 	 URL caminhoImagem = FormularioPrincipal.class.getResource("/imagens/logo.png");
 	    ImageIcon iconeTitulo = new ImageIcon(caminhoImagem);
 	    frm.setIconImage(iconeTitulo.getImage());
 	
-	//Imagem
+	//Imagem fundo
 	URL caminhoDaImagem = FormularioPrincipal.class.getResource("/imagens/biblioteca capa.jpg");
 	
 	// Objeto para obter a imagem
 	ImageIcon imagem = new ImageIcon(caminhoDaImagem);	
 
-	// JLabel
+	//JLabel imagem do findo
 	JLabel exibirImagem = new JLabel();
 	exibirImagem.setIcon(imagem);
 	exibirImagem.setBounds(0, 0, 1200, 100);
 	
-	//Exibir Imagem 
+	//Exibir Imagem do fundo
 	frm.getContentPane().add(exibirImagem);
 	
-	//Ação aos botões do Menu
-	
-	JMenuBar menuBar = new JMenuBar();
-	frm.setJMenuBar(menuBar);
-	
-	JMenu mnIncio = new JMenu("In\u00EDcio");
-	menuBar.add(mnIncio);
-	
-	//Menu Login
-	JMenuItem mntmLogin = new JMenuItem("Login");
-	mnIncio.add(mntmLogin);
-	mntmLogin.addMouseListener(new MouseListener() {
+	//Botão login
+	JButton login = new JButton("");
+	login.setToolTipText("Login");
+	login.setIcon(new ImageIcon(FormularioPrincipal.class.getResource("/imagens/login (2).png")));
+	login.setBounds(80, 130, 160, 110);
+	frm.getContentPane().add(login);
+	login.addMouseListener(new MouseListener() {
 		
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			FormularioLogin f = new FormularioLogin();
+			FormularioLoginAluno f = new FormularioLoginAluno();
 			
 		}
 		
@@ -88,28 +84,107 @@ public class FormularioPrincipal {
 		}
 	});
 	
-	//Menu Sair
-	JMenuItem mntmSair = new JMenuItem("Sair");
-	mnIncio.add(mntmSair);
 	
-	JMenu mnNewMenu = new JMenu("");
-	menuBar.add(mnNewMenu);
-	
-	JMenu mnNewMenu_1 = new JMenu("Buscar");
-	menuBar.add(mnNewMenu_1);
-	
-	JMenuItem mntmNome = new JMenuItem("Nome");
-	mnNewMenu_1.add(mntmNome);
-	
-	
-	JMenuItem mntmAutor = new JMenuItem("Autor");
-	mnNewMenu_1.add(mntmAutor);
-	mntmSair.addMouseListener(new MouseListener() {
+	//Exibir Livros
+	JButton livros = new JButton("");
+	livros.setToolTipText("Livros");
+	livros.setIcon(new ImageIcon(FormularioPrincipal.class.getResource("/imagens/Livro.png")));
+	livros.setBounds(330, 130, 160, 110);
+	frm.getContentPane().add(livros);
+	livros.addMouseListener(new MouseListener() {
 		
 		@Override
 		public void mouseReleased(MouseEvent e) {
+			FormularioExibirLivros fo = new FormularioExibirLivros();
 			frm.dispose();
 			
+		}
+		
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+	
+	//Cadastrar Livros
+	JButton cadastrar = new JButton("");
+	cadastrar.setToolTipText("Cadastrar Livros");
+	cadastrar.setIcon(new ImageIcon(FormularioPrincipal.class.getResource("/imagens/cadastrar livros.png")));
+	cadastrar.setBounds(580, 130, 160, 110);
+	frm.getContentPane().add(cadastrar);
+	cadastrar.addMouseListener(new MouseListener() {
+		
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			FormularioCadastro f = new FormularioCadastro();
+			frm.dispose();
+		}
+		
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+	
+	//Exibir quantidade de livros que a biblioteca possui
+	JLabel exibirQntd = new JLabel("A Biblioteca possui:");
+	exibirQntd.setFont(new Font("Tahoma", Font.BOLD, 12));
+	exibirQntd.setBounds(609, 297, 131, 14);
+	frm.getContentPane().add(exibirQntd);
+	
+	//Login Administrador
+	JButton adm = new JButton("");
+	adm.setToolTipText("Administrador");
+	adm.setBackground(new Color(255, 250, 250));
+	adm.setIcon(new ImageIcon(FormularioPrincipal.class.getResource("/imagens/Adm.png")));
+	adm.setBounds(80, 300, 160, 110);
+	frm.getContentPane().add(adm);
+	
+	//Ação ao botão Administrador
+	adm.addMouseListener(new MouseListener() {
+		
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			FormularioLoginAdm f = new FormularioLoginAdm();
+			frm.dispose();
 		}
 		
 		@Override
