@@ -31,6 +31,8 @@ public class FormularioExibirLivros {
 		
 		frm.add(barra);
 		
+		//Exibir o formulário e seus componentes
+		frm.setVisible(true);
 		
 		
 	}
