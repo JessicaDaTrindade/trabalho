@@ -8,6 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 
 
@@ -15,7 +17,7 @@ import java.awt.Font;
 public class FormularioPrincipal {
 	
 	//Construtor
-	public FormularioPrincipal() {
+	public FormularioPrincipal(int nivel) {
 	
 	//Jframe
 	JFrame frm = new JFrame("Biblioteca ProJava");
@@ -45,57 +47,22 @@ public class FormularioPrincipal {
 	//Exibir Imagem do fundo
 	frm.getContentPane().add(exibirImagem);
 	
-	//Botão login
-	JButton login = new JButton("");
-	login.setToolTipText("Login");
-	login.setIcon(new ImageIcon(FormularioPrincipal.class.getResource("/imagens/login (2).png")));
-	login.setBounds(80, 130, 160, 110);
-	frm.getContentPane().add(login);
-	login.addMouseListener(new MouseListener() {
-		
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			FormularioLoginAluno f = new FormularioLoginAluno();
-			
-		}
-		
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-	});
+	
+	
+	
 	
 	
 	//Exibir Livros
 	JButton livros = new JButton("");
 	livros.setToolTipText("Livros");
 	livros.setIcon(new ImageIcon(FormularioPrincipal.class.getResource("/imagens/Livro.png")));
-	livros.setBounds(330, 130, 160, 110);
+	livros.setBounds(45, 130, 160, 110);
 	frm.getContentPane().add(livros);
 	livros.addMouseListener(new MouseListener() {
 		
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			FormularioExibirLivros fo = new FormularioExibirLivros();
+			FormularioExibirLivros fe = new FormularioExibirLivros();
 			frm.dispose();
 			
 		}
@@ -129,14 +96,20 @@ public class FormularioPrincipal {
 	JButton cadastrar = new JButton("");
 	cadastrar.setToolTipText("Cadastrar Livros");
 	cadastrar.setIcon(new ImageIcon(FormularioPrincipal.class.getResource("/imagens/cadastrar livros.png")));
-	cadastrar.setBounds(580, 130, 160, 110);
+	cadastrar.setBounds(267, 130, 160, 110);
 	frm.getContentPane().add(cadastrar);
 	cadastrar.addMouseListener(new MouseListener() {
 		
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			FormularioCadastro f = new FormularioCadastro();
+			//Não exibir o botão cadastrar para o aluno	
+			if(nivel == 2) {
+				cadastrar.setEnabled(false);
+				JOptionPane.showMessageDialog(null,"Sem Permissão!");
+			}else {
+			FormularioCadastro f = new FormularioCadastro(1);
 			frm.dispose();
+			}
 		}
 		
 		@Override
@@ -170,47 +143,17 @@ public class FormularioPrincipal {
 	exibirQntd.setBounds(609, 297, 131, 14);
 	frm.getContentPane().add(exibirQntd);
 	
-	//Login Administrador
-	JButton adm = new JButton("");
-	adm.setToolTipText("Administrador");
-	adm.setBackground(new Color(255, 250, 250));
-	adm.setIcon(new ImageIcon(FormularioPrincipal.class.getResource("/imagens/Adm.png")));
-	adm.setBounds(80, 300, 160, 110);
-	frm.getContentPane().add(adm);
+	JButton btnCadastrarUsuario = new JButton("");
+	btnCadastrarUsuario.setIcon(new ImageIcon(FormularioPrincipal.class.getResource("/imagens/login (2).png")));
+	btnCadastrarUsuario.setToolTipText("Cadastrar Usu\u00E1rios");
+	btnCadastrarUsuario.setBounds(45, 294, 160, 110);
+	frm.getContentPane().add(btnCadastrarUsuario);
 	
-	//Ação ao botão Administrador
-	adm.addMouseListener(new MouseListener() {
-		
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			FormularioLoginAdm f = new FormularioLoginAdm();
-			frm.dispose();
-		}
-		
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-	});
+	JButton btnEmprestimo = new JButton("");
+	btnEmprestimo.setToolTipText("Emprestimo de Livros");
+	btnEmprestimo.setBounds(267, 294, 160, 110);
+	frm.getContentPane().add(btnEmprestimo);
+	
 	
 	
 	//Exibir o formulário e seus componentes

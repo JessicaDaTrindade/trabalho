@@ -14,7 +14,7 @@ import parte1.AcaoArray;
 public class FormularioCadastro {
 	
 	//Construtor
-	public FormularioCadastro() {
+	public FormularioCadastro(int nivel) {
 		
 		AcaoArray a = new AcaoArray();
 		
@@ -70,7 +70,7 @@ public class FormularioCadastro {
 				frm.dispose();
 				
 				//Voltar ao menu principal
-				FormularioPrincipal fp = new FormularioPrincipal();
+				FormularioPrincipal fp = new FormularioPrincipal(1);
 				
 			}
 			

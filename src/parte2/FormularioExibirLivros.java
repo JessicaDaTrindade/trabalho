@@ -7,6 +7,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import parte1.AcaoArray;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
 
 public class FormularioExibirLivros {
 	
@@ -27,14 +32,93 @@ public class FormularioExibirLivros {
 		
 		//JScrollPane barra de rolagem
 		JScrollPane barra = new JScrollPane(tabela);
-		barra.setBounds(40, 180, 410, 270);
+		barra.setBounds(40, 20, 750, 290);
 		
-		frm.add(barra);
+		JButton btnreservar = new JButton("Reservar livro");
+		btnreservar.setBounds(40, 366, 129, 64);
+		frm.getContentPane().add(btnreservar);
+		btnreservar.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		//Botão Voltar
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBounds(661, 366, 129, 64);
+		frm.getContentPane().add(btnVoltar);
+		btnVoltar.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				//Fechar 
+				frm.dispose();
+				
+				//Voltar para Menu Principal
+				FormularioPrincipal fp = new FormularioPrincipal(2);
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		//Exibir JPane		
+		frm.getContentPane().add(barra);
+		
+		
+		
 		
 		//Exibir o formulário e seus componentes
 		frm.setVisible(true);
 		
 		
 	}
-
 }
