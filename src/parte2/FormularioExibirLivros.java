@@ -7,10 +7,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import parte1.AcaoArray;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 
 public class FormularioExibirLivros {
@@ -25,6 +28,11 @@ public class FormularioExibirLivros {
 		frm.setLocationRelativeTo(null); 
 		frm.getContentPane().setLayout(null); 
 		frm.getContentPane().setBackground(new Color(255, 250, 250));
+		
+		//JFrameSetIcon mudar ícone título
+		 URL caminhoImagem = FormularioPrincipal.class.getResource("/imagens/logo.png");
+		 ImageIcon iconeTitulo = new ImageIcon(caminhoImagem);
+		 frm.setIconImage(iconeTitulo.getImage());
 		
 		AcaoArray ar = new AcaoArray();
 		

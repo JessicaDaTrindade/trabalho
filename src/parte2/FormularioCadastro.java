@@ -3,7 +3,9 @@ package parte2;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.net.URL;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,6 +28,11 @@ public class FormularioCadastro {
 		frm.setLocationRelativeTo(null); 
 		frm.setLayout(null); 
 		frm.getContentPane().setBackground(Color.DARK_GRAY);
+		
+		//JFrameSetIcon mudar ícone título
+		 URL caminhoImagem = FormularioPrincipal.class.getResource("/imagens/logo.png");
+		 ImageIcon iconeTitulo = new ImageIcon(caminhoImagem);
+		 frm.setIconImage(iconeTitulo.getImage());
 		
 		//JLabel nome livro
 		JLabel lblNomeLivro = new JLabel("Nome do Livro");

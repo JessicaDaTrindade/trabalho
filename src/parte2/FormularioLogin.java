@@ -4,7 +4,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.net.URL;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
@@ -25,6 +27,11 @@ public class FormularioLogin {
 		formulario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		formulario.setLocationRelativeTo(null);
 		formulario.setLayout(null);
+		
+		//JFrameSetIcon mudar ícone título
+		 URL caminhoImagem = FormularioPrincipal.class.getResource("/imagens/logo.png");
+		 ImageIcon iconeTitulo = new ImageIcon(caminhoImagem);
+		 formulario.setIconImage(iconeTitulo.getImage());
 		
 		AcaoArray ar = new AcaoArray();
 		ar.criarAdm();
