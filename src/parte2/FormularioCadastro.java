@@ -18,6 +18,9 @@ public class FormularioCadastro {
 	//Construtor
 	public FormularioCadastro(int nivel) {
 		
+		//Variavel contador	
+		String li = "", au = "", ge = "";
+		
 		AcaoArray a = new AcaoArray();
 		
 		//Cadastrar livros
@@ -115,8 +118,14 @@ public class FormularioCadastro {
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				String livro = txtLivro.getText();
+					
+				
 				String autor = txtAutor.getText();
+				
 				String genero = txtGenero.getText();
+					
+				
+				
 				
 				//Cadastrar
 				a.cadastrar(livro, autor, genero);

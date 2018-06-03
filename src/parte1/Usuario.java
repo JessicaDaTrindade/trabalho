@@ -5,7 +5,15 @@ import java.util.ArrayList;
 public class Usuario {
 	
 	//Atributos
-	private String Login, Senha;
+	private String Login, Senha, Nome;
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String nome) {
+		Nome = nome;
+	}
+
 	private int Nivel;
 	
 	//ArrayList
